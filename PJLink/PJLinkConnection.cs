@@ -269,7 +269,36 @@ namespace PJLink
 
         }
 
-        public void closeConnection()
+        public bool IsConnected()
+        {
+            if (_client != null)
+                return _client.Connected;
+            else return false;
+        }
+
+        public void Dispose()
+        {
+            if (_client != null)
+                _client.Dispose();
+            if (_stream != null)
+                _stream.Dispose();
+        }
+
+        public void CloseAndDispose()
+        {
+            if (_client != null)
+            {
+                _client.Close();
+                _client.Dispose();
+            }
+            if (_stream != null)
+            {
+                _stream.Close();
+                _stream.Dispose();
+            }
+        }
+
+        public void CloseConnection()
         {
             if (_client != null)
                 _client.Close();
