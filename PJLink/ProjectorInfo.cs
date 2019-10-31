@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Serialization; 
 using System.IO;
 
-namespace rv
+namespace PJLink
 {
     [Serializable]
     public class ProjectorInfo

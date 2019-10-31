@@ -23,7 +23,7 @@ using System.Net.Sockets;
 using System.IO;
 using System.Security.Cryptography; 
 
-namespace rv
+namespace PJLink
 {
     /// <summary>
     /// Simple class to control networked projectors via the PJLink protocol. 
@@ -36,8 +36,8 @@ namespace rv
     /// Basic usage: 
     /// <code> 
     /// // Create connection object, communicating with projector with IP 192.168.1.14
-    /// // Projector has authentication enabled, password is rv (ignored if auth disabled)
-    /// PJLinkConnection c = new PJLinkConnection("192.168.1.14", "rv");
+    /// // Projector has authentication enabled, password is PJLink (ignored if auth disabled)
+    /// PJLinkConnection c = new PJLinkConnection("192.168.1.14", "PJLink");
     /// 
     /// //using shortcuts
     /// c.turnOn(); 

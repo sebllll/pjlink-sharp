@@ -5,7 +5,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Net;
 
-namespace rv
+namespace PJLink
 {
     /// <summary>
     /// A custom TcpClient class that cancels connection attempts after the specified timeout.
