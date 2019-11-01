@@ -162,6 +162,24 @@ namespace PJLink
             t.Start();
         }
 
+        public event EventHandler<ResponseEventArgs<Command, Command.Response>> OnResponse;
+
+        /// <summary>
+        /// Sends a command asynchronously. Uses standard Eventpattern. OnResponse will 
+        /// be raised when the command has executed
+        /// </summary>
+        /// <param name="cmd"></param>
+        public void sendCommandAsync(Command cmd)
+        {
+            System.Threading.Thread t = new System.Threading.Thread((System.Threading.ThreadStart)delegate
+            {
+                var response = sendCommand(cmd);
+                OnResponse?.Invoke(this, new ResponseEventArgs<Command, Command.Response>(cmd, response));
+            });
+            t.IsBackground = true;
+            t.Start();
+        }
+
         #region Shortcuts
 
         /// <summary>
@@ -323,4 +341,17 @@ namespace PJLink
         #endregion
 
     }
+
+    public class ResponseEventArgs<Command, Response> : EventArgs
+    {
+        public readonly Command cmd;
+        public readonly Response rsp;
+
+        public ResponseEventArgs(Command _cmd, Response _rsp)
+        {
+            cmd = _cmd;
+            rsp = _rsp;
+        }
+    }
+
 }

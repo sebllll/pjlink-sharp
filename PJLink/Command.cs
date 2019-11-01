@@ -22,10 +22,18 @@ using System.Text;
 
 namespace PJLink
 {
+    /// <summary>
+    /// base class for Commands
+    /// </summary>
     public class Command
     {
+        /// <summary>
+        /// Callback used by SendCommandAsync
+        /// </summary>
+        /// <param name="sender">The Command sent to the projector</param>
+        /// <param name="response">The response from the projector</param>
         public delegate void CommandResultHandler(Command sender, Response response);
-
+  
         protected Response _cmdResponse;
 
         public enum Response
