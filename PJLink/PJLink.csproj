@@ -67,14 +67,14 @@
     <DocumentationFile>bin\AnyCPU\Debug\PJLink.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\AnyCPU\Release\</OutputPath>
+    <OutputPath>..\..\..\lib\net472\</OutputPath>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\AnyCPU\Release\PJLink.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\lib\net472\PJLink.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
